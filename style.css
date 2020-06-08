@@ -1,0 +1,100 @@
+body{
+    background-color: rgb(190, 190, 190);
+    font-family: 'Lobster', cursive;
+}
+
+#info-container{
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 10px auto 0 auto;
+    
+}
+
+#logo{
+    width: 800px;
+    font-size: 80px;
+    text-align: center;
+    color: rgb(11, 60, 134);
+    text-shadow: 2px 2px 2px #f8f4f4;
+    text-shadow: 2px -2px 2px #e9e0e0;
+    text-shadow: -2px -2px 2px #ebe8e8;
+    text-shadow: -2px 2px 2px #eceaea;
+}
+
+.scoreboard{
+    margin-top: 40px;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(11, 60, 134);
+    text-shadow: 2px -2px 2px rgb(11, 60, 134);
+    text-shadow: -2px -2px 2px rgb(11, 60, 134);
+    text-shadow: -2px 2px 2px rgb(11, 60, 134);
+    justify-content: space-between;
+    border-bottom: solid 2px black;
+    border-radius: 5%;
+    padding: 0px 20px 10px 20px;
+}
+
+span{
+    color: rgb(11, 60, 134);
+    text-shadow: 2px 2px 2px #f8f4f4;
+    text-shadow: 2px -2px 2px #e9e0e0;
+    text-shadow: -2px -2px 2px #ebe8e8;
+    text-shadow: -2px 2px 2px #eceaea;
+}
+
+
+
+#board-container{
+    width: 426px;
+    height: 426px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-evenly;
+    background: rgb(10, 10, 240);
+    margin: 40px auto 0 auto;
+    font-family: 'Balsamiq Sans', cursive;
+    
+}
+
+.game-tile{
+    height: 140px;
+    width: 140px;
+    background-color: rgb(190, 190, 190);
+    color: rgb(11, 60, 134);
+    font-size: 120px;
+    text-align: center;
+    text-shadow: 2px 2px 2px #f8f4f4;
+    text-shadow: 2px -2px 2px #e9e0e0;
+    text-shadow: -2px -2px 2px #ebe8e8;
+    text-shadow: -2px 2px 2px #eceaea;
+}
+
+#tile-1, #tile-2, #tile-3{
+    border-bottom: solid 3px rgb(91, 91, 97);
+    color: white;
+    text-shadow: 2px 2px 2px rgb(11, 60, 134);
+    text-shadow: 2px -2px 2px rgb(11, 60, 134);
+    text-shadow: -2px -2px 2px rgb(11, 60, 134);
+    text-shadow: -2px 2px 2px rgb(11, 60, 134);
+}
+
+#tile-4, #tile-5, #tile-6{
+    border-bottom: solid 3px rgb(91, 91, 97);
+}
+
+#tile-1, #tile-4, #tile-7{
+    border-right: solid 3px rgb(91, 91, 97);
+}
+
+#tile-2, #tile-5, #tile-8{
+    border-right: solid 3px rgb(91, 91, 97);
+}
+
+a{
+    font-family: 'Merriweather', serif;
+}
