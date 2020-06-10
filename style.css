@@ -1,6 +1,12 @@
 body{
     background-color: rgb(190, 190, 190);
     font-family: 'Lobster', cursive;
+    height: fit-content;
+}
+
+#macro-container{
+    width: 100%;
+    min-width: 800px;
 }
 
 #info-container{
