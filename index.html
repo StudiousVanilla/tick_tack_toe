@@ -10,23 +10,32 @@
 <body>
     <div id = 'info-container'>
         <div id='logo'>Tick Tack Toe</div>
-        <div class = 'scoreboard' id = 'player1-score'>Player 1:
-            <span>4</span></div>
-        <div class = 'scoreboard' id = 'player2-score'>Player 2:
-            <span>3</span></div>
+        <div class = 'scoreboard' id = 'player1'>
+            <span class = 'player-move'id='player1-move'>*</span>
+            Player 1:
+            <span id='score-player1'></span>
+        </div>
+        <div class = 'scoreboard' id = 'player2'>
+            <span class = 'player-move' id='player2-move'>*</span>
+            Player 2:
+            <span id='score-player2'></span>
+        </div>
     </div>
     <div id = 'board-container'>
-        <div class = 'game-tile' id = 'tile-1'>X</div>
-        <div class = 'game-tile' id = 'tile-2'>O</div>
-        <div class = 'game-tile' id = 'tile-3'>X</div>
-        <div class = 'game-tile' id = 'tile-4'>O</div>
-        <div class = 'game-tile' id = 'tile-5'>X</div>
-        <div class = 'game-tile' id = 'tile-6'>O</div>
-        <div class = 'game-tile' id = 'tile-7'>X</div>
-        <div class = 'game-tile' id = 'tile-8'>O</div>
-        <div class = 'game-tile' id = 'tile-9'>X</div>
+        <div class = 'game-tile' id = 'tile-1'></div>
+        <div class = 'game-tile' id = 'tile-2'></div>
+        <div class = 'game-tile' id = 'tile-3'></div>
+        <div class = 'game-tile' id = 'tile-4'></div>
+        <div class = 'game-tile' id = 'tile-5'></div>
+        <div class = 'game-tile' id = 'tile-6'></div>
+        <div class = 'game-tile' id = 'tile-7'></div>
+        <div class = 'game-tile' id = 'tile-8'></div>
+        <div class = 'game-tile' id = 'tile-9'></div>
     </div>
     <script src="script.js"></script>
-    <a href="https://www.google.com">Developd by: Oisín Byrne</a>
+    <div class = "signature-container">
+        <a href="https://www.google.com">Developed by: Oisín Byrne</a>
+    </div>
+ 
 </body>
 </html>
