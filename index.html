@@ -20,7 +20,16 @@
                 Player 2:
                 <span id='score-player2'></span>
             </div>
+            <div class ='name-inputs'>
+                <form action="">
+                    <input class = 'input-field' id='player1-name' type="text" placeholder="Player1" onfocus="this.placeholder = ''"/>   
+                    <input class = 'input-field' id='player2-name' type="text" placeholder="Player2" onfocus="this.placeholder = ''">
+                </div>
+            </form>
         </div>
+    <div class = 'menu-button-container'>
+        <button class = 'menu-buttons'id='ready'>Ready?</button>
+    </div>
     <div id='macro-container'>
         <div id = 'board-container'>
             <div class = 'game-tile' id = 'tile-1'></div>
@@ -32,6 +41,10 @@
             <div class = 'game-tile' id = 'tile-7'></div>
             <div class = 'game-tile' id = 'tile-8'></div>
             <div class = 'game-tile' id = 'tile-9'></div>
+        </div>
+        <div id = "game-button-container">
+            <button class = game-buttons id='back'>Back</button>
+            <button class = game-buttons id='reset'>Reset</button>
         </div>
         <script src="script.js"></script>
         <div class = "signature-container">

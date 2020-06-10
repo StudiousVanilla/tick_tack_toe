@@ -2,9 +2,28 @@ body{
     background-color: rgb(190, 190, 190);
     font-family: 'Lobster', cursive;
     height: fit-content;
+    min-width: 900px;
+}
+
+#ready{
+    display: block;
+    margin: 100px auto;
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+    padding: 10px 20px 10px 20px;
+    color: rgb(11, 60, 134);
+    text-shadow: 2px 2px 2px #f8f4f4;
+    text-shadow: 2px -2px 2px #e9e0e0;
+    text-shadow: -2px -2px 2px #ebe8e8;
+    text-shadow: -2px 2px 2px #eceaea;
+}
+
+.menu-button-contianer{
+    min-width: 800px;
 }
 
 #macro-container{
+    display: none;
     width: 100%;
     min-width: 800px;
 }
@@ -21,6 +40,7 @@ body{
 #logo{
     width: 800px;
     font-size: 80px;
+    display: block;
     text-align: center;
     color: rgb(11, 60, 134);
     text-shadow: 2px 2px 2px #f8f4f4;
@@ -60,6 +80,27 @@ span{
     text-shadow: -2px 2px 2px rgb(190, 190, 190);
 }
 
+.name-inputs{
+    margin: 50px 0px 10px 0px;
+}
+
+form{
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.input-field{
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    color: black;
+}
+
+::placeholder {
+    color: rgb(209, 206, 201);
+    opacity: 1  ; 
+  }
 
 
 #board-container{
@@ -118,6 +159,25 @@ span{
     text-shadow: -2px -2px 2px #ebe8e8;
     text-shadow: -2px 2px 2px #eceaea;
 }
+
+#game-button-container{
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.game-buttons{
+    margin: 0px 40px 0px 40px;
+    display: inline-block;
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+    padding: 0px 20px 0px 20px;
+    color: rgb(11, 60, 134);
+    text-shadow: 2px 2px 2px #f8f4f4;
+    text-shadow: 2px -2px 2px #e9e0e0;
+    text-shadow: -2px -2px 2px #ebe8e8;
+    text-shadow: -2px 2px 2px #eceaea;
+} 
 
 
 .signature-container{

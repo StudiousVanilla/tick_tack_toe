@@ -2,10 +2,97 @@
 let turnCounter = 1;
 const turnOrder = () => turnCounter=turnCounter+1;
 
+// Module
+const buttons = (()=>{
+
+    //captures game board
+    const game = document.querySelector('#macro-container')
+
+    // captures the input fields for name inputs
+    const inputField = document.querySelector('.name-inputs')
+
+    // captures ready button and HTML
+    const readyButton = document.querySelector('#ready')
+
+    // captures back button
+    const  backButton = document.querySelector('#back')
+    // removes game from display and presents ready button + anme input again
+    backButton.addEventListener('click', ()=>{
+        readyButton.style.display = 'block'
+        game.style.display = 'none'
+        inputField.style.display = 'flex'
+        // set grid to ''
+        gameBoard.clearGrid(gameGrid,'')
+        // render grid
+        gameBoard.renderGrid(gameGrid);
+        // reset turn number
+        turnCounter = 1;
+        // set turn indictor to player 1
+        gameBoard.turnIndicator(turnCounter)
+        // reset game score
+        player1.resetScore()
+        player1.displayScore1()
+        player2.resetScore()
+        player2.displayScore2()
+
+        //reset input fields
+        let input1 = document.querySelector('#player1-name')
+        let input2 = document.querySelector('#player2-name')
+        input1.value = ''
+        input2.value = ''
+    })
+
+    // captures reset button
+    const resetButton = document.querySelector('#reset')
+    resetButton.addEventListener('click',()=>{
+        // set grid to ''
+        gameBoard.clearGrid(gameGrid,'')
+        // render grid
+        gameBoard.renderGrid(gameGrid);
+        // reset turn number
+        turnCounter = 1;
+        // set turn indictor to player 1
+        gameBoard.turnIndicator(turnCounter)
+        // reset the game score
+        player1.resetScore()
+        player1.displayScore1()
+        player2.resetScore()
+        player2.displayScore2()
+    })
+    
+    readyButton.addEventListener('click', ()=>{
+
+        let player1SetName = document.querySelector('#player1-name').value
+        //set default name
+        if(player1SetName === ""){
+            player1SetName = 'Player1'
+        }
+        
+        let player1Default = document.querySelector('#player1')
+        player1Default.innerHTML="<span class = 'player-move'id='player1-move'>*</span>"+player1SetName+": <span id='score-player1'></span>"
+
+        let player2SetName = document.querySelector('#player2-name').value
+        // set default name
+        if(player2SetName === ""){
+            player2SetName = 'Player2'
+        }
+        
+        let player2Default = document.querySelector('#player2')
+        player2Default.innerHTML="<span class = 'player-move'id='player2-move'>*</span>"+player2SetName+": <span id='score-player2'></span>"
+
+        // removes button and name inputs from 'display' and renders in the game
+        readyButton.style.display = 'none'
+        game.style.display= 'block'
+        inputField.style.display = 'none'
+    })
+
+    return{}
+})();
+
+
 // Factory Function to make players
 const playerFactory = (playerNumber) => {
-    // captures HTML span for score depending on player number (1 or 2)
-    let playerScore = document.querySelector('#score-player'+playerNumber)
+
     // initialise score
     let score = 0;
 
@@ -13,10 +100,20 @@ const playerFactory = (playerNumber) => {
     const updateScore = () => score+=1;
 
     // renders new score to HTML
-    const displayScore = () =>{ 
-        playerScore.innerHTML = score};
+    const displayScore1 = () =>{
+         // captures HTML span for score depending on player number (1 or 2)
+        let playerScore1 = document.querySelector('#score-player1')
+        playerScore1.innerHTML = score};
+    
+    const displayScore2 = () =>{ 
+        let playerScore2 = document.querySelector('#score-player2')
+        playerScore2.innerHTML = score};
+    
+    const resetScore = () =>{
+        score = 0;
+    }
 
-    return{updateScore, displayScore};
+    return{updateScore, displayScore1,displayScore2, resetScore};
 };
 
 // creates player1 and player2 objects from factory function
@@ -185,11 +282,11 @@ tiles.forEach((tile)=>{
                 // update and render score of winner
                 if(turnCounter%2 !== 0){
                     player1.updateScore()
-                    player1.displayScore()
+                    player1.displayScore1()
                 }
                 else{
                     player2.updateScore()
-                    player2.displayScore()
+                    player2.displayScore2()
                 }
 
                 // clear and re-render grid
