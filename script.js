@@ -121,6 +121,7 @@ let player1 = playerFactory(1);
 let player2 = playerFactory(2);
 
 
+
 // Module
 const gameBoard = (()=>{
     // pseudo grid for js to work with, and to set HTML from
@@ -201,17 +202,70 @@ const gameBoard = (()=>{
 
     // alerts players as to who the winner is
     const alertWinner = (turn) =>{
+        // captures 'alert' div
+        let winnerMessage = document.querySelector('#winner-alert-container')
+        // captures 'game' div
+        let gameContent = document.querySelector('#macro-container')
         if(turn%2 === 0){
-            alert("Player 2 wins!")
+            const alertRender=()=>{
+                let alertNameFull = document.querySelector('#player2').textContent
+                let alertNameActual= alertNameFull.slice(1,(alertNameFull.length-2))
+    
+                winnerMessage.innerHTML = "<p class='winner-message' id='winner-alert-symbol-o'>O</p><p class='winner-message' id='winner-alert-message'>"+alertNameActual+" wins!</p><button id='winner-alert-close'>close</button>"
+                // show 'alert' div
+                winnerMessage.style.display = 'flex'
+                // hide game
+                gameContent.style.display = 'none'
+            }
+            alertRender()
         }
         else{
-            alert("Player 1 wins!")
+            const alertRender=()=>{
+                let alertNameFull = document.querySelector('#player1').textContent
+                let alertNameActual= alertNameFull.slice(1,(alertNameFull.length-2))
+
+                winnerMessage.innerHTML = "<p class='winner-message' id='winner-alert-symbol-x'>X</p><p class='winner-message' id='winner-alert-message'>"+alertNameActual+" wins!</p><button id='winner-alert-close'>close</button>"
+                // show 'alert' div
+                winnerMessage.style.display = 'flex'
+                // hide game
+                gameContent.style.display = 'none'
+            }
+            alertRender()
         }
+
+        // captures 'close' button on alert
+        const alertClose = document.querySelector('#winner-alert-close')
+        alertClose.addEventListener('click', ()=>{
+            // hide winner alert
+            winnerMessage.style.display = 'none'
+            // show game again
+            gameContent.style.display = 'block'
+        })
+
     }
 
     const checkDraw = () =>{
+        let winnerMessage = document.querySelector('#winner-alert-container')
+        // captures 'game' div
+        let gameContent = document.querySelector('#macro-container')
         if (Object.values(gameGrid).indexOf("") < 0){
-            alert('Its a draw!')
+            const alertRender=()=>{
+                winnerMessage.innerHTML = "<p class='winner-message' id='winner-alert-symbol-o'>¯\\_(ツ)_/¯</p><p class='winner-message' id='winner-alert-message'> It's a Draw!</p><button id='winner-alert-close'>close</button>"
+                // show 'alert' div
+                winnerMessage.style.display = 'flex'
+                // hide game
+                gameContent.style.display = 'none'
+            }
+            alertRender()
+
+            // captures 'close' button on alert
+            const alertClose = document.querySelector('#winner-alert-close')
+            alertClose.addEventListener('click', ()=>{
+                // hide winner alert
+                winnerMessage.style.display = 'none'
+                // show game again
+                gameContent.style.display = 'block'
+            })
             return true;
         }
         else{
@@ -299,7 +353,6 @@ tiles.forEach((tile)=>{
             if(gameBoard.checkDraw()){
 
                 // clear and re-render grid
-                console.log('draw')
                 gameBoard.clearGrid(gameGrid,"");
                 gameBoard.renderGrid(gameGrid);
             }
@@ -311,7 +364,28 @@ tiles.forEach((tile)=>{
             gameBoard.turnIndicator(turnCounter);
         }
         else{
-            alert('That space is taken!')
+             // captures 'alert' div
+            let winnerMessage = document.querySelector('#winner-alert-container')
+            // captures 'game' div
+            let gameContent = document.querySelector('#macro-container')
+
+            const alertRender=()=>{
+                winnerMessage.innerHTML = "<p class='winner-message' id='winner-alert-symbol-x'>(ಠ_ಠ)</p><p class='winner-message' id='winner-alert-message'> That space is taken!</p><button id='winner-alert-close'>close</button>"
+                // show 'alert' div
+                winnerMessage.style.display = 'flex'
+                // hide game
+                gameContent.style.display = 'none'
+            }
+            alertRender()
+
+            // captures 'close' button on alert
+            const alertClose = document.querySelector('#winner-alert-close')
+            alertClose.addEventListener('click', ()=>{
+                // hide winner alert
+                winnerMessage.style.display = 'none'
+                // show game again
+                gameContent.style.display = 'block'
+            })
         }  
     })
 })
